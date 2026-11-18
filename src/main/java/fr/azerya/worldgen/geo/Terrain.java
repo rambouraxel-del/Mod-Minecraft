@@ -17,7 +17,8 @@ public final class Terrain {
         // term lets different regions have different ocean/land proportions.
         double continent = .78 * fbm(wx / 18500.0, wz / 18500.0, 47, 4)
                 + .22 * noise(wx / 52000.0, wz / 52000.0, 61);
-        double plateX = wx / 12500.0, plateZ = wz / 12500.0;
+        double plateX = (wx + 2100 * noise(x / 7200.0, z / 7200.0, 89)) / 12500.0;
+        double plateZ = (wz + 2100 * noise(x / 7200.0, z / 7200.0, 91)) / 12500.0;
         int cx = floor(plateX), cz = floor(plateZ);
         double first = Double.POSITIVE_INFINITY, second = Double.POSITIVE_INFINITY;
         for (int dz = -2; dz <= 2; dz++) for (int dx = -2; dx <= 2; dx++) {
@@ -28,11 +29,13 @@ public final class Terrain {
             if (d < first) { second = first; first = d; }
             else if (d < second) { second = d; }
         }
-        // Distance to a Voronoi plate boundary gives long, connected ranges; a
-        // broad shoulder and individual uplift variation avoid uniform walls.
+        // Only compressive sections support major chains. The continuous stress field
+        // tapers uplift into saddles and leaves quiet sections between ranges.
         double edge = Math.sqrt(second) - Math.sqrt(first);
         double boundary = 1.0 - smoothstep(.025, .24, edge);
-        double activity = .72 + .20 * noise(wx / 9000.0, wz / 9000.0, 97);
+        double stress = .68 * noise(wx / 22500.0, wz / 22500.0, 97)
+                + .32 * noise(wx / 9500.0, wz / 9500.0, 199);
+        double activity = .96 * smoothstep(-.23, .36, stress);
         double land = smoothstep(-.08, .12, continent);
         double strength = boundary * activity * land;
         return new Geology(continent, strength, boundary * activity);

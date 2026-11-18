@@ -15,8 +15,9 @@ Sur serveur dédié, installe les mêmes fichiers dans `mods` et règle `level-t
 
 ## Compiler et vérifier
 
-Avec Java 25, lance `./gradlew build` ou `gradlew.bat build` sous Windows. Le mod se trouve dans `build/libs/azerya-worldgen-0.1.0.jar`. Le workflow [Build](https://github.com/rambouraxel-del/Mod-Minecraft/actions/workflows/build.yml) publie les JAR en artefact.
+Avec Java 25, lance `./gradlew build` ou `gradlew.bat build` sous Windows. Le mod se trouve dans `build/libs/azerya-worldgen-0.1.0.jar`. Le workflow [Build](https://github.com/rambouraxel-del/Mod-Minecraft/actions/workflows/build.yml) publie les JAR en artefact. Pour jouer, prends le fichier sans suffixe `-sources`.
 
+- [Résultats des tests](docs/validation.md)
 - [Architecture et limites](docs/architecture.md)
 - [Cartes de diagnostic et coordonnées](docs/diagnostics/)
 - [Tests sur serveur dédié](scripts/)

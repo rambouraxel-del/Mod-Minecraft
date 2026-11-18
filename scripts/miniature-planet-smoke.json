@@ -1,0 +1,55 @@
+{
+  "server_properties_file": "run/server.properties",
+  "eula": true,
+  "clean_world": true,
+  "server_properties": {
+    "level-name": "azerya-smoke-world",
+    "level-seed": "42",
+    "level-type": "azerya_worldgen:miniature_planet",
+    "online-mode": "false",
+    "server-ip": "127.0.0.1",
+    "server-port": "33489"
+  },
+  "first_boot": {
+    "commands": [
+      "forceload add 30325 109875",
+      "forceload add 35750 106250",
+      "forceload add 35925 106750",
+      "worldborder get",
+      "setblock 30325 300 109875 minecraft:gold_block",
+      "execute in minecraft:overworld positioned 30325 286 109875 if block ~ ~ ~ minecraft:andesite run say AZERYA_MOUNTAIN_PROBE_OK",
+      "execute in minecraft:overworld positioned 35750 192 106250 if block ~ ~ ~ minecraft:water run say AZERYA_RIVER_PROBE_OK",
+      "execute in minecraft:overworld positioned 35925 202 106750 if block ~ ~ ~ minecraft:water run say AZERYA_LAKE_PROBE_OK",
+      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_PLACED"
+    ],
+    "expect_logs": [
+      "Azerya spawn region: x=-?\\d+, z=-?\\d+",
+      "Azerya planet active: seed=42, border=240000",
+      "240000",
+      "AZERYA_MOUNTAIN_PROBE_OK",
+      "AZERYA_RIVER_PROBE_OK",
+      "AZERYA_LAKE_PROBE_OK",
+      "AZERYA_SAVE_MARKER_PLACED"
+    ]
+  },
+  "reload": {
+    "commands": [
+      "forceload add 30325 109875",
+      "forceload add 35750 106250",
+      "forceload add 35925 106750",
+      "worldborder get",
+      "execute in minecraft:overworld positioned 30325 286 109875 if block ~ ~ ~ minecraft:andesite run say AZERYA_MOUNTAIN_RELOAD_PROBE_OK",
+      "execute in minecraft:overworld positioned 35750 192 106250 if block ~ ~ ~ minecraft:water run say AZERYA_RIVER_RELOAD_PROBE_OK",
+      "execute in minecraft:overworld positioned 35925 202 106750 if block ~ ~ ~ minecraft:water run say AZERYA_LAKE_RELOAD_PROBE_OK",
+      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_RELOADED"
+    ],
+    "expect_logs": [
+      "Azerya planet active: seed=42, border=240000",
+      "240000",
+      "AZERYA_MOUNTAIN_RELOAD_PROBE_OK",
+      "AZERYA_RIVER_RELOAD_PROBE_OK",
+      "AZERYA_LAKE_RELOAD_PROBE_OK",
+      "AZERYA_SAVE_MARKER_RELOADED"
+    ]
+  }
+}

@@ -27,7 +27,8 @@ public final class GeographyChecks {
                 "seed 0 land ratio outside broad continent bounds: " + landRatios[0]);
         require(Math.abs(landRatios[0] - landRatios[1]) + Math.abs(landRatios[1] - landRatios[2]) > .015,
                 "land/continent layout did not measurably vary across seeds: " + List.of(landRatios[0], landRatios[1], landRatios[2]));
-        System.out.println("GeographyChecks passed; sampled land ratios=" + List.of(landRatios[0], landRatios[1], landRatios[2]));
+        System.out.println("GeographyChecks passed for seeds " + java.util.Arrays.toString(seeds)
+                + "; sampled continental-core ratios=" + java.util.Arrays.toString(landRatios));
     }
 
     private static void checkRangeAndRepeatability(Terrain t) {
@@ -91,7 +92,7 @@ public final class GeographyChecks {
     private static void checkMountainRanges(Terrain t) {
         int active = 0, linked = 0;
         // Long-spacing samples should expose regional uplift bands rather than isolated peaks.
-        for (int z = -24000; z <= 24000; z += 2000) for (int x = -24000; x <= 24000; x += 2000) {
+        for (int z = -118000; z <= 118000; z += 2000) for (int x = -118000; x <= 118000; x += 2000) {
             Terrain.Geology g = t.geology(x, z);
             if (g.mountainStrength() > .55 && g.continentalness() > -.08) {
                 active++;

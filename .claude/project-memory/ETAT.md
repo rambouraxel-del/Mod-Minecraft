@@ -10,4 +10,4 @@
 
 Choix provisoires. Mer Y=63, carte centrée sur l’origine, réseau au pas de 400 blocs et border natif de Minecraft.
 
-Consulter les résultats avant de reprendre un audit des surfaces en jeu.
+Le premier lancement dédié a révélé qu’une interface d’accès était déclarée dans le paquet réservé aux mixins. Elle a été déplacée. Les cartes ont aussi révélé un maillage de crêtes trop régulier, corrigé par un masque continu de compression et un tracé de plaques déformé. Les versions corrigées ont été recompilées et vérifiées. Voir [validation](../../docs/validation.md).
