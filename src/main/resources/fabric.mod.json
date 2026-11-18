@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "azerya_worldgen",
+  "version": "${version}",
+  "name": "Azerya Worldgen",
+  "description": "Procedural continents, climate and drainage for a finite miniature planet.",
+  "environment": "*",
+  "entrypoints": { "main": ["fr.azerya.worldgen.AzeryaWorldgen"] },
+  "mixins": ["azerya_worldgen.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-api": ">=0.166.2"
+  }
+}
