@@ -12,6 +12,7 @@
   },
   "first_boot": {
     "commands": [
+      "forceload add 35775 106214 35776 106214",
       "forceload add 30325 109875",
       "forceload add 35750 106250",
       "forceload add 35925 106750",
@@ -20,20 +21,23 @@
       "execute in minecraft:overworld positioned 30325 286 109875 if block ~ ~ ~ minecraft:andesite run say AZERYA_MOUNTAIN_PROBE_OK",
       "execute in minecraft:overworld positioned 35750 192 106250 if block ~ ~ ~ minecraft:water run say AZERYA_RIVER_PROBE_OK",
       "execute in minecraft:overworld positioned 35925 202 106750 if block ~ ~ ~ minecraft:water run say AZERYA_LAKE_PROBE_OK",
-      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_PLACED"
+      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_PLACED",
+      "execute in minecraft:overworld if block 35775 192 106214 minecraft:water if block 35776 192 106214 minecraft:water run say AZERYA_RIVER_SEAM_OK"
     ],
     "expect_logs": [
       "Azerya spawn region: x=-?\\d+, z=-?\\d+",
       "Azerya planet active: seed=42, border=240000",
-      "240000",
+      "The world border is currently 240000 block\\(s\\) wide",
       "AZERYA_MOUNTAIN_PROBE_OK",
       "AZERYA_RIVER_PROBE_OK",
       "AZERYA_LAKE_PROBE_OK",
-      "AZERYA_SAVE_MARKER_PLACED"
+      "AZERYA_SAVE_MARKER_PLACED",
+      "AZERYA_RIVER_SEAM_OK"
     ]
   },
   "reload": {
     "commands": [
+      "forceload add 35775 106214 35776 106214",
       "forceload add 30325 109875",
       "forceload add 35750 106250",
       "forceload add 35925 106750",
@@ -41,15 +45,17 @@
       "execute in minecraft:overworld positioned 30325 286 109875 if block ~ ~ ~ minecraft:andesite run say AZERYA_MOUNTAIN_RELOAD_PROBE_OK",
       "execute in minecraft:overworld positioned 35750 192 106250 if block ~ ~ ~ minecraft:water run say AZERYA_RIVER_RELOAD_PROBE_OK",
       "execute in minecraft:overworld positioned 35925 202 106750 if block ~ ~ ~ minecraft:water run say AZERYA_LAKE_RELOAD_PROBE_OK",
-      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_RELOADED"
+      "execute in minecraft:overworld positioned 30325 300 109875 if block ~ ~ ~ minecraft:gold_block run say AZERYA_SAVE_MARKER_RELOADED",
+      "execute in minecraft:overworld if block 35775 192 106214 minecraft:water if block 35776 192 106214 minecraft:water run say AZERYA_RIVER_SEAM_RELOAD_OK"
     ],
     "expect_logs": [
       "Azerya planet active: seed=42, border=240000",
-      "240000",
+      "The world border is currently 240000 block\\(s\\) wide",
       "AZERYA_MOUNTAIN_RELOAD_PROBE_OK",
       "AZERYA_RIVER_RELOAD_PROBE_OK",
       "AZERYA_LAKE_RELOAD_PROBE_OK",
-      "AZERYA_SAVE_MARKER_RELOADED"
+      "AZERYA_SAVE_MARKER_RELOADED",
+      "AZERYA_RIVER_SEAM_RELOAD_OK"
     ]
   }
 }

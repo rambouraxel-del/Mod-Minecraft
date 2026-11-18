@@ -25,4 +25,4 @@ Les hauteurs, la résolution du drainage, les profils des pluies, les seuils de 
 - Les formations tectoniques organisent le relief en utilisant des frontières de plaques procédurales. Les chaînes pourraient être mieux différenciées par type de zone tectonique et par érosion.
 - Les seuils de biome sont discrets autour de champs continus. Les végétaux restent ceux des listes vanilla et la composition des forêts varie encore principalement par biome. Une couche de peuplement forestier permettrait de faire varier progressivement les proportions d’essences.
 - Les galeries souterraines sont générées en trois dimensions sous une couche de protection. Leur accessibilité depuis la surface, les aquifères et les gisements géologiques feront l’objet d’une itération dédiée.
-- Les pièces et structures vanilla qui dépendent de la topographie héritent des limites de ce relief. Le monde est destiné à une sauvegarde neuve.
+- Les structures et petites mares de lave vanilla suivent leurs règles habituelles. Leur répartition pourra être raccordée à la géologie de la planète. Le monde est destiné à une sauvegarde neuve.

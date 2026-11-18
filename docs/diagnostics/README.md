@@ -10,7 +10,7 @@ Run after compiling the project, with compiled main and test classes on the clas
 java -cp <project-classpath> fr.azerya.worldgen.diagnostics.WorldgenDiagnostic <seed> <output-dir> [size=256] [blocks=240000]
 ```
 
-The checked in overview maps cover the full 240000 by 240000 block world at 937.5 blocks per pixel. Seed 42 also has a 32768 by 32768 block detail map. Site candidates are searched within 5 km of the world edge at 250 block intervals and include local slope plus surface, bed, and water levels. Forest candidates favor a surrounding dry temperate region. Coast candidates are 200–600 blocks from ocean. Fixed seed, window, and size produce fixed samples and pixels. The overviews plot main drainage channels with discharge ≥30 in model units. The detail map plots smaller tributaries from discharge ≥4.
+The checked in overview maps cover the full 240000 by 240000 block world at 937.5 blocks per pixel. Seed 42 also has a 32768 by 32768 block detail map. Seed 422 is the world created from the Minecraft client for the visual test. Site candidates are searched within 5 km of the world edge at 250 block intervals and include local slope plus surface, bed, and water levels. Forest candidates favor a surrounding dry temperate region. Coast candidates are 200–600 blocks from ocean. Fixed seed, window, and size produce fixed samples and pixels. The overviews plot main drainage channels with discharge ≥30 in model units. The detail map plots smaller tributaries from discharge ≥4.
 
 ## Generated seeds
 
@@ -19,3 +19,4 @@ The checked in overview maps cover the full 240000 by 240000 block world at 937.
 | 0 | [PNG](worldgen-0.png) | — | [Sites](worldgen-0-sites.md) |
 | 1 | [PNG](worldgen-1.png) | — | [Sites](worldgen-1-sites.md) |
 | 42 | [PNG](worldgen-42-overview.png) | [PNG](worldgen-42-detail.png) | [Sites](worldgen-42-sites.md) |
+| 422 | [PNG](worldgen-422.png) | — | [Sites](worldgen-422-sites.md) |
